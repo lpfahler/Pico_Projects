@@ -13,19 +13,19 @@ while True:
     for num in myList: 
         if num >= 0.5:
             # blink 5 times
-            for nBlinks in range(0, 5):
+            for nBlinks in range(0, 10):
                 print('Can you see this speed? ', num, 'seconds')
                 internalLED.toggle()
                 sleep(num)
         elif num >= 0.1 and num < 0.5:
             # blink 10 times
-            for nBlinks in range(0, 10):
+            for nBlinks in range(0, 20):
                 print('Can you see this speed? ', num, 'seconds')
                 internalLED.toggle()
                 sleep(num)
         else: 
             # blink 50 times
-            for nBlinks in range(0, 50):
+            for nBlinks in range(0, 100):
                 print('Can you see this speed? ', num, 'seconds')
                 internalLED.toggle()
                 sleep(num)
