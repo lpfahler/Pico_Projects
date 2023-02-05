@@ -43,9 +43,9 @@ def charBlinks(char):
     # if the character is a space, sleep the between word time
     if char == ' ':
         # assuming that the space is inside the message (not the first character)
-        # for a space, we need to sleep "betWord - 3" since the blinking code always sleeps
-        # betChar (=3) at the end of each character
-        sleep(betWord - 3)
+        # for a space, we need to sleep "betWord - 3*dot" since the blinking code always sleeps
+        # betChar (=3*dot) at the end of each character
+        sleep(betWord - 3*dot)
     else:
         # look up character in morseCode dictionary - make lowercase if needed
         mCode = morseCode.get(char.lower())
