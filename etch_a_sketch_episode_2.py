@@ -30,10 +30,10 @@ try:
         greenValue = greenPot.read_u16()
         # green pot has a min of ~400 - scale to 4 to 123) to give a
         # border of four pixels - call this xpos
-        xpos = int(scale(greenValue, 400, 65535, 4, 123))
+        xpos = int(scale(greenValue, 418, 65517, 4, 123))
         # blue pot has a min of ~500 - scale to 3, 61 to give a border
         # of three pixels to screen - call this ypos
-        ypos = int(scale(blueValue, 500, 65535, 3, 61))
+        ypos = int(scale(blueValue, 419, 65473, 3, 61))
         # move pixel on screen   
         myOLED.pixel(xpos, ypos, 1)
         myOLED.show()

@@ -1,4 +1,4 @@
-# Program to read the two potentiometers to see range
+# Basic program to read the two potentiometers
 # Lori Pfahler
 # March 2023
 
