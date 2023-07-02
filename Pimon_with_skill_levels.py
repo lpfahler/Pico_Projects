@@ -126,7 +126,7 @@ print('Beginner: match 8 colors, Intermediate: 14, Advanced: 20, Expert: 31, Dem
 correct_input = False
 while correct_input == False:
     choice = input('8 = Beginner, 14 = Intermediate, 20 = Advanced, 31 = Expert, 4 = Demo:  ')
-    if choice in ['4', '8', '14', '20', '21']:
+    if choice in ['4', '8', '14', '20', '31']:
         n_seq = int(choice)
         correct_input = True
         print(f'Match the {n_seq} colors to win!')
