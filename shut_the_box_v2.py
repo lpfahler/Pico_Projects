@@ -1,8 +1,9 @@
 # Shut the Box Game Code Version 2 (59 lines of Code)
 # Version 2 allows the roll of single dice when the tiles available 
 # are less than or equal to 6
+# Fixed rollCheck function to check for addition four tile cases
 # Lori Pfahler
-# July 2024
+# November 2024
 
 import random
 
@@ -47,10 +48,17 @@ def rollCheck(rollTotal, availNums):
                     if sum([availNums[index1], availNums[index2],
                            availNums[index3]]) == rollTotal:
                         return True           
-    # Only one combination of four numbers is less than the max roll of 12
-    # 1+2+3+4 = 10, check just this case
+    # Only four combinations of four numbers is <= the max roll of 12
+    # 1+2+3+4 = 10, 1+2+3+5 = 11, 1+2+3+6=12, and 1+2+4+5=12
+    # check just these cases
     if rollTotal == 10 and all(x in availNums for x in [1, 2, 3, 4]):
-        return True       
+        return True
+    if rollTotal == 11 and all(x in availNums for x in [1, 2, 3, 5]):
+        return True
+    if rollTotal == 12 and all(x in availNums for x in [1, 2, 3, 6]):
+        return True
+    if rollTotal == 12 and all(x in availNums for x in [1, 2, 4, 5]):
+        return True  
     # return False if none of the single numbers or possible sums from availNums will work 
     return False
 

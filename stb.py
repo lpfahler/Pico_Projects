@@ -1,6 +1,7 @@
 # Functions for Shut the Box Game
+# Fixed rollCheck function to check for addition four tile cases
 # Lori Pfahler
-# October 2024
+# November 2024
 
 from utime import sleep
 from random import randint
@@ -217,10 +218,17 @@ def rollCheck(rollTotal, availNums):
                     if sum([availNums[index1], availNums[index2],
                            availNums[index3]]) == rollTotal:
                         return True           
-    # Only one combination of four numbers is less than the max roll of 12
-    # 1+2+3+4 = 10, check just this case
+    # Only four combinations of four numbers is <= the max roll of 12
+    # 1+2+3+4 = 10, 1+2+3+5 = 11, 1+2+3+6=12, and 1+2+4+5=12
+    # check just these cases
     if rollTotal == 10 and all(x in availNums for x in [1, 2, 3, 4]):
-        return True       
+        return True
+    if rollTotal == 11 and all(x in availNums for x in [1, 2, 3, 5]):
+        return True
+    if rollTotal == 12 and all(x in availNums for x in [1, 2, 3, 6]):
+        return True
+    if rollTotal == 12 and all(x in availNums for x in [1, 2, 4, 5]):
+        return True        
     # return False if none of the single numbers or possible sums from availNums will work 
     return False
     
