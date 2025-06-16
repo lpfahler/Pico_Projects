@@ -2,11 +2,10 @@
 # and 74HC595 IC shift register for control of
 # eight of the LEDs on the bargraph
 #
-# functions adapted from Kevin McAleer:
-#     https://www.youtube.com/live/iSTlP4Lbibs?si=NUKTNka81qMmFrw- 
+# Write eight bits at a time
 #
 # Lori Pfahler
-# April 2025
+# June 2025
 
 import machine
 import utime
@@ -28,7 +27,6 @@ clock_pin.low()
 def clear():
     clear_reg_pin.low()
     clear_reg_pin.high()
-
 
 # tick the clock pin
 def tick():
@@ -62,7 +60,7 @@ clear()
 latch()
 
 # write the value to turn on an end LED
-# Note that the LED that will turn on is QA
+# Note that the LED that will turn on is connected to QA
 write_num(0b10000000)
 utime.sleep(5)
 
@@ -72,7 +70,7 @@ latch()
 utime.sleep(1)
 
 # write the value to turn on an end LED
-# Note that the LED that will turn on is QH
+# Note that the LED that will turn on is connected to QH
 write_num(0b00000001)
 utime.sleep(5)
 
@@ -97,3 +95,4 @@ utime.sleep(5)
 # clear the register and flip the latch pin
 clear()
 latch()
+

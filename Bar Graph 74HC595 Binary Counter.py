@@ -5,7 +5,7 @@
 # Binary Counter
 #
 # Lori Pfahler
-# April 2025
+# June 2025
 
 import machine
 import utime
