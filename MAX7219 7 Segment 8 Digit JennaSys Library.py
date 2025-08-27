@@ -16,6 +16,7 @@ from machine import Pin, SPI
 import utime
 import max7219
 
+
 # set up the SPI bus
 spi = SPI(0, baudrate=100000, polarity=0, phase=0, sck=Pin(18), mosi=Pin(19))
 cs = Pin(17, Pin.OUT)
